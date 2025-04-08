@@ -1,0 +1,22 @@
+<table class="table w-full">
+    <thead>
+        <tr>
+            <th>کاربر</th>
+            <th>متن</th>
+            <th>تاریخ</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for tweet in tweets %}
+            <tr class="hover">
+                <td>{{ tweet.username }}</td>
+                <td>{{ tweet.text }}</td>
+                <td>{{ tweet.created_at|date:"Y-m-d H:i:s" }}</td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="3" class="text-center">هیچ توییتی یافت نشد</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
